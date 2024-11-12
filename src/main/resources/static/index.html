@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr> Калькулятор<hr>
+
+<textarea name="num1"> Введите первое число </textarea>
+<textarea> Введите второе число </textarea>
+
+<hr>
+
+<button id="plus"  type="submit">  + </button>
+<button id="minus" type="submit"> - </button>
+<button id="umn" type="submit"> * </button>
+<button id="delenie" type="submit"> / </button>
+
+
+</body>
+</html>
+
+
+<script>
+    const b2=document.getElementById("butt2");
+
+    b2.onclick=function(){
+       if (b2.style.background== "yellow"){
+          b2.style.background= "pink";
+        } else {b2.style.background= "yellow";}
+
+    };
+const b=document.getElementById("butt1");
+b.onclick = function(){
+console.log("кнопка нажата");
+}
+b.onmouseout=function(){
+console.log("не нажали");
+}
+b.onfocus=function(){
+console.log("в фокусе");
+}
