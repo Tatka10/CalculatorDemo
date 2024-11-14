@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,37 +7,50 @@
 <body>
 <hr> Калькулятор<hr>
 
-<textarea name="num1"> Введите первое число </textarea>
-<textarea> Введите второе число </textarea>
+<input id="num1"> Введите первое число </input>
+<input id="num2"> Введите второе число </input>
+
+<button id="plus" onclick="op='+'" >  + </button>
+<button id="minus" onclick="op='-'"  > - </button>
+<button id="times"  onclick="op='*'" > * </button>
+<button id="divide" onclick="op='+/'"  > / </button>
+
+<button onclick="func()"> равняется ... </button>
+<p id="result"></p>
 
 <hr>
 
-<button id="plus"  type="submit">  + </button>
-<button id="minus" type="submit"> - </button>
-<button id="umn" type="submit"> * </button>
-<button id="delenie" type="submit"> / </button>
 
+<script>
+      var op;
+      function func() {
+        var result;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        switch (op) {
+          case '+':
+            result = num1 + num2;
+            break;
+          case '-':
+            result = num1 - num2;
+            break;
+          case '*':
+            result = num1 * num2;
+            break;
+          case '/':
+            if (num2) {
+              result = num1 / num2;
+            } else {
+              result = 'бесконечность';
+            }
+            break;
+          default:
+            result = 'выберите операцию';
+        }
 
+        document.getElementById("result").innerHTML = result;
+      }
+</script>
 </body>
 </html>
 
-
-<script>
-    const b2=document.getElementById("butt2");
-
-    b2.onclick=function(){
-       if (b2.style.background== "yellow"){
-          b2.style.background= "pink";
-        } else {b2.style.background= "yellow";}
-
-    };
-const b=document.getElementById("butt1");
-b.onclick = function(){
-console.log("кнопка нажата");
-}
-b.onmouseout=function(){
-console.log("не нажали");
-}
-b.onfocus=function(){
-console.log("в фокусе");
-}
